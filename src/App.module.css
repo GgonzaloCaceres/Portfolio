@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+}
+.container {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: radial-gradient(black white);
+}
+.vignette {
+  background: radial-gradient(transparent 40%, black);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 200;
+}
+.parallax {
+  width: 110vw;
+  height: 110vh;
+  position: absolute;
+  left: -5%;
+  top: -5%;
+}
+
+img {
+  width: 100%;
+  position: absolute;
+}
+
+.vapour {
+  position: absolute;
+  left: 50%;
+  z-index: 123123123;
+  width: 143px;
+  height: 3px;
+  top: 64%;
+  left: 59%;
+}
+
+.vapour span {
+  position: absolute;
+  bottom: 50px;
+  display: block;
+  margin: 0 2px 50px;
+  min-width: 8px;
+  height: 50px;
+  background: #fff;
+  border-radius: 50%;
+  animation: animate 5s linear infinite;
+  opacity: 0;
+  filter: blur(15px);
+  animation-delay: calc(var(--v) * -0.7s);
+}
+
+@keyframes animate {
+  0% {
+    transform: translateY(0) scaleX(1);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-50px) scaleX(2);
+  }
+  95% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(-100px) scaleX(4);
+  }
+}
